@@ -2,7 +2,7 @@
 
 # Table des matières
 * [Introduction](#introduction)
-* [Nommage des variable](#nommage-des-variable)
+* [Nommage des variables](#nommage-des-variables)
 * [Gestion des erreurs et des exceptions](#gestion-des-erreurs-et-des-exceptions)
 * [Fonctions courtes et spécifiques](#fonctions-courtes-et-spécifiques)
 * [Respect des conventions de codage](#respect-des-conventions-de-codage)
@@ -20,7 +20,7 @@ Le code propre, permet d'améliorer la lisibilité, la maintenabilité et la qua
 
 Dans ce dépôt, nous faisons le tour de ces différents grands principes et pratiques via des exemples en PhP.
 
-## Nommage des variable 
+## Nommage des variables 
 Donner des noms **significatifs** et **explicites** à vos variables facilite la lecture et la compréhension du code par vous-même et par les autres membres de l'équipe. 
 Des noms de variables clairs et compréhensibles peuvent également contribuer à réduire les erreurs et à améliorer la qualité du code.
 | Nom de variable                | Mauvais exemple                | Bon exemple                    | Explication                                                                                                        |
