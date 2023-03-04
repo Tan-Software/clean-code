@@ -2,7 +2,7 @@
 
 # Table des matières
 * [Introduction](#introduction)
-* [Nommage des variables](#nommage-des-variables)
+* [Nommage des variable](#nommage-des-variable)
 * [Gestion des erreurs et des exceptions](#gestion-des-erreurs-et-des-exceptions)
 * [Fonctions courtes et spécifiques](#fonctions-courtes-et-spécifiques)
 * [Respect des conventions de codage](#respect-des-conventions-de-codage)
@@ -10,7 +10,8 @@
 * [Structure du code claire et organisée](#structure-du-code-claire-et-organisée)
 * [Utilisation de tests unitaires](#utilisation-de-tests-unitaires)
 * [Gestion de dépendances](#gestion-de-dépendances)
-
+* [Gestion de la complexité du code](#gestion-de-la-complexité-du-code)
+* [Les fonctions doivent faire une seule chose et la faire bien](#les-fonctions-doivent-faire-une-seule-chose-et-la-faire-bien)
 ## Introduction
 
 Développé et affiné par de nombreux programmeurs et experts en informatique au fil des ans, le clean code a été popularisé par [Robert C. Martin](https://fr.wikipedia.org/wiki/Robert_C._Martin).
@@ -19,7 +20,7 @@ Le code propre, permet d'améliorer la lisibilité, la maintenabilité et la qua
 
 Dans ce dépôt, nous faisons le tour de ces différents grands principes et pratiques via des exemples en PhP.
 
-## Nommage des variables
+## Nommage des variable 
 Donner des noms **significatifs** et **explicites** à vos variables facilite la lecture et la compréhension du code par vous-même et par les autres membres de l'équipe. 
 Des noms de variables clairs et compréhensibles peuvent également contribuer à réduire les erreurs et à améliorer la qualité du code.
 | Nom de variable                | Mauvais exemple                | Bon exemple                    | Explication                                                                                                        |
@@ -47,6 +48,7 @@ Les commentaires doivent être utilisés avec parcimonie pour expliquer les part
 | Erreurs connues                | `// Erreur ici`                     | `// Corriger l'erreur de débordement en utilisant une boucle pour limiter la valeur de la variable` | Les commentaires peuvent être utilisés pour signaler des erreurs connues ou des bogues à corriger. |
 | Documentation d'API             | `// Renvoie un objet JSON`         | `// Renvoie un objet JSON contenant les détails du produit`          | Les commentaires peuvent être utilisés pour documenter les API et les fonctions, décrivant ce qu'elles font et comment les utiliser. |
 | Avertissements sur les effets secondaires     | `// Modifie l'état global` | `// Modifie l'état global, cela peut affecter d'autres parties du code` | Les commentaires peuvent être utilisés pour avertir des effets secondaires ou des impacts potentiels sur le reste du code. |
+
 [🔝 Retour en haut de page](#table-des-matières)
 
 ## Fonctions courtes et spécifiques
@@ -138,6 +140,8 @@ La gestion de la complexité est importante pour faciliter la compréhension et 
 | Trop de logique imbriquée        | `if ($a == $b) { if ($b == $c) { if ($c == $d) { ... } } }`                                  | `if ($a == $b && $b == $c && $c == $d) { ... }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | La logique imbriquée est difficile à lire et à comprendre. Il est préférable d'utiliser des expressions logiques simples plutôt que de recourir à des structures de contrôle complexes pour améliorer la lisibilité et la compréhension du code.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | Trop de niveaux d'indentation    | `if ($a) { if ($b) { if ($c) { if ($d) { ... } } } }`                                        | `if (!$a) { return; } if (!$b) { return; } if (!$c) { return; } if (!$d) { return; } ...`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Les niveaux d'indentation excessifs sont difficiles à lire et à comprendre. Il est préférable d'utiliser des structures de contrôle simples et des fonctions claires pour réduire les niveaux d'indentation.                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | Trop de branches conditionnelles  | `if ($a == $b) { ... } else if ($a == $c) { ... } else if ($a == $d) { ... } else { ... }` | `switch ($a) { case $b: ...; break; case $c: ...; break; case $d: ...; break; default: ...; }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Les branches conditionnelles excessives sont difficiles à lire et à comprendre. Il est préférable d'utiliser des structures de contrôle simples pour réduire les branches conditionnelles. Si les branches conditionnelles sont nécessaires, il est préférable d'utiliser une instruction switch plutôt que des instructions if/else imbriquées.                                                                                                                                                                                                                                                                                                                     |
+[🔝 Retour en haut de page](#table-des-matières)
+
 
 ## Les fonctions doivent faire une seule chose et la faire bien
 Les fonctions doivent avoir **une seule responsabilité** et être **spécialisées dans cette tâche**. 
